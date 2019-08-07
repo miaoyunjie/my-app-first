@@ -75,11 +75,22 @@ class App extends React.Component {
     return (
     <div className="App">
       <div className="ip">
-        time <input onChange={(event) => this.inputValueTime(event)}></input><br /><br />
-        page <input onChange={(event) => this.inputValuePage(event)}></input><br /><br />
-        size <input onChange={(event) => this.inputValueSize(event)}></input><br /><br />
-        sort <input name="sort" type="radio" defaultValue="asc" onChange={(event) => this.sortChange(event)} />asc
-            <input name="sort" type="radio" defaultValue="desc" onChange={(event) => this.sortChange(event)}/>desc<br /><br />
+        <div>
+          <span>time:</span> <input className="text" onChange={(event) => this.inputValueTime(event)}></input>
+        </div>
+        <div>
+          <span>page:</span> <input className="text" onChange={(event) => this.inputValuePage(event)}></input>
+        </div>
+        <div>
+          <span>size:</span> <input className="text" onChange={(event) => this.inputValueSize(event)}></input>
+        </div>
+        <div>
+          <span>sort:</span> 
+            <div className="select">
+              <input name="sort" type="radio" defaultValue="asc" onChange={(event) => this.sortChange(event)} />asc
+              <input name="sort" type="radio" defaultValue="desc" onChange={(event) => this.sortChange(event)}/>desc
+            </div>
+        </div>
         <button onClick={this.getjoke}>提交</button>
       </div>
       <div>
